@@ -14,13 +14,14 @@ Output: (16, 20)
 
 Code：
 
-def count_wins(dice1, dice2):
-    assert len(dice1) == 6 and len(dice2) == 6
-    dice1_wins, dice2_wins = 0, 0
+    def count_wins(dice1, dice2):
     
-    # write your code here
+        assert len(dice1) == 6 and len(dice2) == 6
+        dice1_wins, dice2_wins = 0, 0
+    
+        # write your code here
 
-    return (dice1_wins, dice2_wins)
+        return (dice1_wins, dice2_wins)
 
 2. Second Task: Is there the Best Dice?
 Now, your goal is to check whether among the three given dices there is one that is better than the remaining two dices.
@@ -38,13 +39,14 @@ Output: -1
 
 Code：
 
-def find_the_best_dice(dices):
-    assert all(len(dice) == 6 for dice in dices)
+    def find_the_best_dice(dices):
+    
+        assert all(len(dice) == 6 for dice in dices)
 
-    # write your code here
-    # use your implementation of count_wins method if necessary
+        # write your code here
+        # use your implementation of count_wins method if necessary
 
-    return -1
+        return -1
 
 
 3. Third Task: Implement a Strategy
@@ -64,16 +66,16 @@ For example, {0: 3, 'first_dice': 1, 'choose_first': True} is also a correct out
 
 Code:
 
-def compute_strategy(dices):
-    assert all(len(dice) == 6 for dice in dices)
-
-    strategy = dict()
-    strategy["choose_first"] = True
-    strategy["first_dice"] = 0
-    for i in range(len(dices)):
-        strategy[i] = (i + 1) % len(dices)
-        
-    # write your code here
+    def compute_strategy(dices):
     
-    return strategy
+        assert all(len(dice) == 6 for dice in dices)
 
+        strategy = dict()
+        strategy["choose_first"] = True
+        strategy["first_dice"] = 0
+        for i in range(len(dices)):
+            strategy[i] = (i + 1) % len(dices)
+        
+            # write your code here
+    
+        return strategy
