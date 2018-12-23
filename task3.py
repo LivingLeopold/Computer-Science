@@ -51,11 +51,14 @@ def compute_strategy(dices):
             current_dice = dices[i]
             for t in range(len(dices)):
                 potential_better_dice = dices[t]
-                x, y = count_wins(current_dice , potential_better_dice)
-                possibility = y / (x + y)
-                if possibility > better_dice_wins:
-                    better_dice_wins = possibility
-                    better_dice = t
+                if t == i:
+                    continue
+                else:
+                    x, y = count_wins(current_dice, potential_better_dice)
+                    possibility = y / (x + y)
+                    if possibility > better_dice_wins:
+                        better_dice_wins = possibility
+                        better_dice = t
             strategy[i] = better_dice
 
 
